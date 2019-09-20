@@ -1,0 +1,66 @@
+ 1) show level and theme mode. 10 min - start - 10:09 end -10:20
+
+ 2) change background color on toggling theme mode button. 30 min  10:32 - 11:04
+
+ 3) design a square component. 20 min 11:08 11:32
+
+ 4) show grid based on given size. 20min break given   end - 12:20 
+
+ 5) Generate required number of squares.  20 min start- 12:30 - 12:39
+
+ 6) change square color on click. 20 min start 12:50 - 13:05 
+ 
+ 7) keep track on clicked squares. end - 13:05
+
+ 8) generate required number of random numbers.  10mins -14:31 - 14:41
+
+ 9) change color of squares whose number is random number. 10mins 14:46 - 15:30 (also edited random number function)
+
+ 10) display the random squares for n secs where n is grid size. 10mins 15:39 - 16:27
+
+ 11) if the clicked square is random square, then show a color, if  it is wrong, then show it as red. 10mins 16:32 learning hours break; done end - 17:35
+
+ 12) fade inside on selecting required number of correct squares or a wrong square. 20mins start- 9:15 - 9:44 (9:55 animation pending-done) done-10:03
+
+ 13) check the clicked squares with the random numbers and increment level if they match. otherwise go to level 0. 20mins 10:28 - 11:48 20mins break included
+
+ 14) update grid size on level change -done already
+
+ 15) generate squares based on grid size and display them. 12:08 (animations pending)
+
+ 16) update random numbers on level change. 13:00 - 15:47
+
+ 17) Congratulate user on completing all the levels.  done-15:52
+
+ 18) square component state variables to actions. 20 min 12:25 - 13:02 break 14:02 - 
+
+animations
+
+1) transition while theme mode change - done before
+
+2) for correct square click - done before
+
+3) for wrong square click. 20min 9:20 - 9:42
+
+4) zoom inside after squares click. 40mins 10:01 - 10:32
+
+5) zoom outside for showing new grid. 10:32 - 
+
+bugs found 
+
+1) last click is not visible - fixed
+
+2) wrong click red color is not visible - fixed
+
+3) something wrong when theme change
+
+4) game-info bar is moving on zoom out. zoom out should be applied to a div inside container. - fixed
+
+5) do not allow the user to click while showing answer squares. - fixed 15:30
+
+6) problem if there is wrong click on level 0.
+
+7) answer square dissapears on click after sometime. - fixed 12:03
+
+
+ 
