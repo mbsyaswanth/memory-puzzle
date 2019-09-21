@@ -115,16 +115,16 @@ input:checked + .slider:before {
 }
 
 .initial-grid {
-  height: 600px;
-  width: 600px;
+  height: 70%;
+  width: 70%;
 }
 
 .grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 600px;
+  height: 70%;
+  width: 70%;
   opacity: 1;
   transition: 0.5s;
 }
