@@ -99,6 +99,10 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.target-level-container {
+  display: flex;
+}
+
 .clicked-square {
   width: 100%;
 }
