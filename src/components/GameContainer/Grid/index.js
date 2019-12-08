@@ -92,14 +92,12 @@ class Grid extends Component {
       gridTemplateColumns: "repeat(" + this.props.gridsize + "," + "auto" + ")",
       gridTemplateRows: "repeat(" + this.props.gridsize + "," + "auto" + ")",
       gridGap: "2px",
-      height: "600px",
-      width: "600px",
       transition: "all .3s linear .4s"
     };
 
     return (
       <div key={this.props.key} className={"grid-container "}>
-        <div className={this.state.gridFade} style={grid}>
+        <div className={this.state.gridFade + " grid"} style={grid}>
           {this.generateSquares()}
         </div>
       </div>

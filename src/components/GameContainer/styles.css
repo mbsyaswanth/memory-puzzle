@@ -114,6 +114,11 @@ input:checked + .slider:before {
   width: 0px !important;
 }
 
+.grid {
+  height: 100%;
+  width: 100%;
+}
+
 .initial-grid {
   height: 70%;
   width: 70%;
@@ -123,10 +128,20 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70%;
-  width: 70%;
+  height: 600px;
+  width: 600px;
   opacity: 1;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 740px) {
+  .grid-container {
+    width: 300px;
+    height: 300px;
+  }
+  .game-info {
+    width: 300px;
+  }
 }
 
 .wrong-square-before {
