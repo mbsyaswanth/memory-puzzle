@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import InputNumber from "react-input-number";
 
 import "./styles.css";
 
@@ -108,16 +109,21 @@ class GameContainer extends Component {
     );
   };
 
-  onChangeLevel = e => {
-    if (!e.target.value || e.target.value > POSSIBLE_FINAL_LEVEL) {
-      alert("please select valid level");
-      this.setState({
-        finalLevel: INITIAL_FINAL_LEVEL
-      });
+  onIncrementFinalLevel = () => {
+    if (this.state.finalLevel >= POSSIBLE_FINAL_LEVEL) {
       return;
     }
     this.setState({
-      finalLevel: e.target.value
+      finalLevel: this.state.finalLevel + 1
+    });
+  };
+
+  onDecrementFinalLevel = () => {
+    if (this.state.finalLevel <= INITIAL_FINAL_LEVEL) {
+      return;
+    }
+    this.setState({
+      finalLevel: this.state.finalLevel - 1
     });
   };
 
@@ -132,14 +138,11 @@ class GameContainer extends Component {
           <div className="center">Level: {" " + this.state.level}</div>
           <div>
             Target level :
-            <input
-              type="number"
-              min={INITIAL_FINAL_LEVEL}
-              max={POSSIBLE_FINAL_LEVEL}
-              value={this.state.finalLevel}
-              onChange={this.onChangeLevel}
-              style={{ width: "30px", marginLeft: "5px" }}
-            />
+            <span className="target-level-container">
+              <button onClick={this.onDecrementFinalLevel}>-</button>
+              <div>{this.state.finalLevel}</div>
+              <button onClick={this.onIncrementFinalLevel}>+</button>
+            </span>
           </div>
           <div className="center">
             Theme mode:
