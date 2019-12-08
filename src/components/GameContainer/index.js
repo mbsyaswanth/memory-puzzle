@@ -20,13 +20,17 @@ const darkTheme = {
   }
 };
 
+const INITIAL_FINAL_LEVEL = 2;
+const POSSIBLE_FINAL_LEVEL = 15;
+
 class GameContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       thememode: darkTheme,
       randomNumbers: this.getRandomNumbers(0),
-      level: 0
+      level: 0,
+      finalLevel: INITIAL_FINAL_LEVEL
     };
   }
 
@@ -52,10 +56,8 @@ class GameContainer extends Component {
     if (
       clicks.sort().toString() === this.state.randomNumbers.sort().toString()
     ) {
-      if (this.state.level == 2) {
-        alert(
-          "congratulations! sucessfully completed the game. You can start again from initial level"
-        );
+      if (this.state.level == this.state.finalLevel) {
+        alert(" 🎊 Congratulations 🎊. You have reached your target.");
         setTimeout(this.goToInitialLevel, 1000);
       } else {
         setTimeout(this.increaseLevel, 1000);
@@ -106,6 +108,19 @@ class GameContainer extends Component {
     );
   };
 
+  onChangeLevel = e => {
+    if (!e.target.value || e.target.value > POSSIBLE_FINAL_LEVEL) {
+      alert("please select valid level");
+      this.setState({
+        finalLevel: INITIAL_FINAL_LEVEL
+      });
+      return;
+    }
+    this.setState({
+      finalLevel: e.target.value
+    });
+  };
+
   render() {
     let themeMode = {
       color: this.state.thememode.color,
@@ -115,6 +130,17 @@ class GameContainer extends Component {
       <div className="game-container" style={themeMode}>
         <div className="game-info">
           <div className="center">Level: {" " + this.state.level}</div>
+          <div>
+            Target level :
+            <input
+              type="number"
+              min={INITIAL_FINAL_LEVEL}
+              max={POSSIBLE_FINAL_LEVEL}
+              value={this.state.finalLevel}
+              onChange={this.onChangeLevel}
+              style={{ width: "30px", marginLeft: "5px" }}
+            />
+          </div>
           <div className="center">
             Theme mode:
             <label className="switch">
