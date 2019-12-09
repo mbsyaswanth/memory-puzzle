@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import InputNumber from "react-input-number";
 
 import "./styles.css";
 
